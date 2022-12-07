@@ -62,5 +62,8 @@ class Skeleton_Theme
         // Let's include the language lines available for the theme by system default.
         if(!$this->language)
             $this->language = View::$init->theme_lang(Bootstrap::$lang->clang, $this->languages);
+        
+        // Let's include the customization configurations for the theme.
+        $this->config = include __DIR__.DIRECTORY_SEPARATOR."theme-config.php";
     }
 }

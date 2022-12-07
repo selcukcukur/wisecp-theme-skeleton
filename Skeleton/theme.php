@@ -48,4 +48,13 @@ class Skeleton_Theme
      */
     public $languages;
 
+    /**
+     * Create a new theme instance.
+     *
+     * @return void
+     */
+    function __construct()
+    {
+        // ...
+    }
 }

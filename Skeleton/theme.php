@@ -55,6 +55,12 @@ class Skeleton_Theme
      */
     function __construct()
     {
-        // ...
+        // Let's include all available language lines for the theme.
+        if(!$this->languages)
+            $this->languages = View::$init->theme_language_loader($this->name);
+
+        // Let's include the language lines available for the theme by system default.
+        if(!$this->language)
+            $this->language = View::$init->theme_lang(Bootstrap::$lang->clang, $this->languages);
     }
 }

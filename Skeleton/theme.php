@@ -66,4 +66,16 @@ class Skeleton_Theme
         // Let's include the customization configurations for the theme.
         $this->config = include __DIR__.DIRECTORY_SEPARATOR."theme-config.php";
     }
+    
+    /**
+     * Update customized configuration settings for theme.
+     *
+     * @return mixed
+     */
+    public function change_settings()
+    {
+        $themeSettings = isset($this->config["settings"]) ? $this->config["settings"] : [];
+
+        return $themeSettings;
+    }
 }

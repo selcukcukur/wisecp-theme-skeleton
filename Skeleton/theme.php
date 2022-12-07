@@ -66,7 +66,22 @@ class Skeleton_Theme
         // Let's include the customization configurations for the theme.
         $this->config = include __DIR__.DIRECTORY_SEPARATOR."theme-config.php";
     }
-    
+
+    /**
+     * Load the included subpages for the theme.
+     *
+     * @return string[]|void
+     */
+    public function router($targetParameters = [])
+    {
+        $page = Filter::folder($targetParameters[0] ?? '');
+
+        if(($targetParameters[0] ?? false) && ($targetParameters[1] ?? false) && file_exists(__DIR__.DIRECTORY_SEPARATOR."Pages".DIRECTORY_SEPARATOR.Filter::folder($targetParameters[0] ?? false).DIRECTORY_SEPARATOR.Filter::folder($targetParameters[1] ?? false).".php"))
+            return ['include_file' => __DIR__.DIRECTORY_SEPARATOR."Pages".DIRECTORY_SEPARATOR.Filter::folder($targetParameters[0] ?? false).DIRECTORY_SEPARATOR.Filter::folder($targetParameters[1] ?? false).".php"];
+        else if($page && file_exists(__DIR__.DIRECTORY_SEPARATOR."Pages".DIRECTORY_SEPARATOR.$page.".php"))
+            return ['include_file' => __DIR__.DIRECTORY_SEPARATOR."Pages".DIRECTORY_SEPARATOR.$page.".php"];
+    }
+
     /**
      * Update customized configuration settings for theme.
      *

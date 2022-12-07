@@ -22,12 +22,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Theme Version URL
+    | Theme Version Control
     |--------------------------------------------------------------------------
     |
-    | In order to easily manage the versions of your theme remotely, you can
-    | easily perform all updates and upgrades by typing the address where the
-    | theme "json" file is located.
+    | WiseCP simplifies remote version management and updates for you. Enter 
+    | the address of the "json" file to be used for control in this field. 
+    | The remote server can be used.
     |
     */
     'checking-version-url'  => '',

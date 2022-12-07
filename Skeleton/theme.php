@@ -74,7 +74,7 @@ class Skeleton_Theme
      */
     public function change_settings()
     {
-        $themeSettings = isset($this->config["settings"]) ? $this->config["settings"] : [];
+        $themeSettings = $this->config['settings'] ?? [];
 
         return $themeSettings;
     }
